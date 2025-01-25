@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarmy Website</title>
+    <style>
+        /* Basic Styling (You can customize this) */
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        #popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; 
+        }
+
+        #popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="popup-overlay"></div>
+    <div id="popup-content" style="display: none;"> 
+        <section id="math-problem">
+            <h2>Solve the Math Problem</h2>
+            <p id="math-problem-question"></p>
+            <input type="number" id="math-problem-answer">
+            <button id="submit-math-problem-btn">Submit</button>
+        </section>
+    </div>
+
+    <main>
+        <section id="alarm-clock">
+            <h2>Set Your Alarm</h2>
+            <input type="time" id="alarm-time" value="07:00">
+            <select id="alarm-type">
+                <option value="math">Math Problem</option> 
+                {/* Add other alarm types here */}
+            </select>
+            <button id="set-alarm-btn">Set Alarm</button>
+        </section>
+    </main>
+
+    <script>
+        const alarmTimeInput = document.getElementById('alarm-time');
+        const alarmTypeSelect = document.getElementById('alarm-type');
+        const setAlarmBtn = document.getElementById('set-alarm-btn');
+        const mathProblemSection = document.getElementById('math-problem');
+        const mathProblemQuestionPara = document.getElementById('math-problem-question');
+        const mathProblemAnswerInput = document.getElementById('math-problem-answer');
+        const submitMathProblemBtn = document.getElementById('submit-math-problem-btn');
+        const popupOverlay = document.getElementById('popup-overlay');
+        const popupContent = document.getElementById('popup-content'); 
+
+        let alarmSet = false;
+        let alarmTimeoutId;
+
+        setAlarmBtn.addEventListener('click', () => {
+            const alarmTime = alarmTimeInput.value;
+            const alarmType = alarmTypeSelect.value;
+
+            alarmSet = true; 
+            popupOverlay.style.display = 'none'; 
+
+            const timeout = getAlarmTimeout(alarmTime);
+            alarmTimeoutId = setTimeout(() => {
+                showMathProblemPopup(); 
+            }, timeout);
+        });
+
+        submitMathProblemBtn.addEventListener('click', () => {
+            const userAnswer = mathProblemAnswerInput.value;
+            const correctAnswer = mathProblemQuestionPara.getAttribute('data-correct-answer');
+
+            if (userAnswer === correctAnswer) {
+                popupOverlay.style.display = 'none'; 
+                popupContent.style.display = 'none'; 
+                alert('Correct answer!'); 
+            } else {
+                alert('Incorrect answer. Try again!');
+            }
+        });
+
+        function showMathProblemPopup() {
+            popupOverlay.style.display = 'block'; 
+            popupContent.style.display = 'block'; 
+            generateMathProblem();
+        }
+
+        function generateMathProblem() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            const operator = Math.random() < 0.5 ? '+' : '-';
+            const correctAnswer = operator === '+' ? num1 + num2 : num1 - num2;
+
+            mathProblemQuestionPara.innerText = `What is ${num1} ${operator} ${num2}?`;
+            mathProblemQuestionPara.setAttribute('data-correct-answer', correctAnswer);
+        }
+
+        function getAlarmTimeout(alarmTime) {
+            const [alarmHours, alarmMinutes] = alarmTime.split(':').map(Number);
+            const now = new Date();
+            const alarmDate = new Date(now);
+            alarmDate.setHours(alarmHours, alarmMinutes, 0, 0);
+
+            if (alarmDate < now) {
+                alarmDate.setDate(alarmDate.getDate() + 1); 
+            }
+
+            const timeout = alarmDate - now;
+            return timeout;
+        }
+    </script>
+
+</body>
+</html>
