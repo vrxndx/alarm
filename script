@@ -1,0 +1,84 @@
+
+
+
+const alarmTimeInput = document.getElementById('alarm-time');
+const alarmTypeSelect = document.getElementById('alarm-type');
+const setAlarmBtn = document.getElementById('set-alarm-btn');
+const alarmNotificationSection = document.getElementById('alarm-notification');
+const dismissAlarmBtn = document.getElementById('dismiss-alarm-btn');
+const mathProblemSection = document.getElementById('math-problem');
+const mathProblemQuestionPara = document.getElementById('math-problem-question');
+const mathProblemAnswerInput = document.getElementById('math-problem-answer');
+const submitMathProblemBtn = document.getElementById('submit-math-problem-btn');
+const qrCodeScannerSection = document.getElementById('qr-code-scanner');
+const qrCodeScannerVideo = document.getElementById('qr-code-scanner-video');
+
+let alarmSet = false;
+
+setAlarmBtn.addEventListener('click', () => {
+  const alarmTime = alarmTimeInput.value;
+  const alarmType = alarmTypeSelect.value;
+
+  // Set alarm logic here
+  alarmSet = true;
+  alarmNotificationSection.style.display = 'block';
+
+  if (alarmType === 'math') {
+    mathProblemSection.style.display = 'block';
+    generateMathProblem();
+  } else if (alarmType === 'scan') {
+    qrCodeScannerSection.style.display = 'block';
+    // QR code scanner logic here
+  }
+
+  const timeout = getAlarmTimeout(alarmTime);
+  setTimeout(() => {
+    alarmNotificationSection.style.display = 'block';
+  }, timeout);
+});
+
+dismissAlarmBtn.addEventListener('click', () => {
+  alarmNotificationSection.style.display = 'none';
+  mathProblemSection.style.display = 'none';
+  qrCodeScannerSection.style.display = 'none';
+});
+
+submitMathProblemBtn.addEventListener('click', () => {
+  const userAnswer = mathProblemAnswerInput.value;
+  const correctAnswer = mathProblemQuestionPara.getAttribute('data-correct-answer');
+
+  if (userAnswer === correctAnswer) {
+    alarmNotificationSection.style.display = 'none';
+    mathProblemSection.style.display = 'none';
+    alert('Correct answer!');
+  } else {
+    alert('Incorrect answer. Try again!');
+  }
+});
+
+function generateMathProblem() {
+  const num1 = Math.floor(Math.random() * 10) + 1;
+  const num2 = Math.floor(Math.random() * 10) + 1;
+  const operator = Math.random() < 0.5 ? '+' : '-';
+  const correctAnswer = operator === '+' ? num1 + num2 : num1 - num2;
+
+  mathProblemQuestionPara.innerText = `What is ${num1} ${operator} ${num2}?`;
+  mathProblemQuestionPara.setAttribute('data-correct-answer', correctAnswer);
+}
+
+function getAlarmTimeout(alarmTime) {
+  const alarmHours = parseInt(alarmTime.split(':')[0]);
+  const alarmMinutes = parseInt(alarmTime.split(':')[1]);
+  const currentTime = new Date();
+  const currentTimeHours = currentTime.getHours();
+  const currentTimeMinutes = currentTime.getMinutes();
+
+  let timeout = 0;
+  if (alarmHours > currentTimeHours || (alarmHours === currentTimeHours && alarmMinutes > currentTimeMinutes)) {
+    timeout = (alarmHours - currentTimeHours) * 60 * 60 * 1000 + (alarmMinutes - currentTimeMinutes) * 60 * 1000;
+  } else {
+    timeout = (24 - currentTimeHours + alarmHours) * 60 * 60 * 1000 + (60 - currentTimeMinutes + alarmMinutes) * 60 * 1000;
+  }
+
+  return timeout;
+}
