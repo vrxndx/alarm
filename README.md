@@ -67,58 +67,20 @@ Note: This is for a simple web-based application. If you were to build a more co
 ### Implementation
 For Software:
 # Installation
-1.Clone the repository: git clone <repository_url>
-2.Open the project in your preferred code editor.]
+1.Clone the repository: https://github.com/vrxndx/alarm.git
+2.Open the project in chrome or mozilla firefox
 
 # Run
-[Open the index.html file in a web browser.]
-
-### Project Documentation
-For Software:
-
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+![Screenshot 2025-01-26 072201](https://github.com/user-attachments/assets/b0d79b0a-ee86-4a7e-bff6-57263bd5e41d)
+![Screenshot 2025-01-26 072230](https://github.com/user-attachments/assets/f9b09bc2-35b2-4b40-b380-723d5423aea1)
+![Screenshot 2025-01-26 072246](https://github.com/user-attachments/assets/61b22d4c-5349-403c-82c7-db50f6182494)
+![Screenshot 2025-01-26 072715](https://github.com/user-attachments/assets/3ae7ef13-1174-416a-84cd-fc0bce826334)
 
 # Build Photos
-![Team](Add photo of your team here)
-
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
+![WhatsApp Image 2025-01-26 at 07 31 00_8c8f27e5](https://github.com/user-attachments/assets/b22f61c9-2eca-4ed9-8c56-49654d62df53)
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
 
 ## Team Contributions
 - [VRINDA P]: [BRAINSTORMING,MODEL DEPLOYMENT,EVALUATION AND DEBUGGING]
