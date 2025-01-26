@@ -11,7 +11,7 @@
 - Member 3: SRUTHY KRISHNA S - LBSITW
 
 ### Hosted Project Link
-https://colab.research.google.com/drive/1FE90FfU1gqd83lvZcyDVpEXElO3f8VC4?usp=sharing
+
 
 ### Project Description
 "WakeUp Math" is an interactive alarm clock that challenges users with a simple math problem to solve before the alarm can be dismissed. This engaging approach helps users wake up more alert and mentally prepared for the day.
