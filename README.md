@@ -1,8 +1,8 @@
-# [WakeUpMath] 🎯
+# WakeUpMath 🎯
 
 
 ## Basic Details
-### Team Name: [CODECRAFT]
+### Team Name: CODECRAFT
 
 
 ### Team Members
@@ -81,6 +81,7 @@ For Software:
 
 ### Project Demo
 # Video
+https://drive.google.com/file/d/1H4dXwRg7MZ4o8aU3JPzHIuMyS-izeOgq/view?usp=sharing
 
 ## Team Contributions
 - [VRINDA P]: [BRAINSTORMING,MODEL DEPLOYMENT,EVALUATION AND DEBUGGING]
