@@ -1,14 +1,14 @@
-# [Project Name] 🎯
+# [WakeUpMath] 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [CODECRAFT]
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: [VRINDA P] - [LBSITW]
+- Member 2: [SWATHY SURESH] - [LBSITW]
+- Member 3: [SRUTHY KRISHNA S] - [LBSITW]
 
 ### Hosted Project Link
 [mention your project hosted project link here]
@@ -25,10 +25,10 @@
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [HTML, CSS, JavaScript ]
+- [None]
+- [None]
+- [ Visual Studio Code (or preferred IDE)]
 
 For Hardware:
 - [List main components]
@@ -38,10 +38,11 @@ For Hardware:
 ### Implementation
 For Software:
 # Installation
-[commands]
+[1.Clone the repository: git clone <repository_url>
+2.Open the project in your preferred code editor.]
 
 # Run
-[commands]
+[Open the index.html file in a web browser.]
 
 ### Project Documentation
 For Software:
@@ -91,9 +92,9 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [VRINDA P]: [BRAINSTORMING,MODEL DEPLOYMENT,EVALUATION AND DEBUGGING]
+- [SWATHY SURESH]: [BRAINSTORMING,DATA COLLECTION AND INTEGRATION]
+- [SRUTHY KRISHNA S]: [BRAINSTORMING,DATA COLLECTION AND INTEGRATION]
 
 ---
 Made with ❤️ at TinkerHub
